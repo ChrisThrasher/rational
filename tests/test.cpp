@@ -57,9 +57,12 @@ TEMPLATE_TEST_CASE("operator+(const Rational&)", "", std::int8_t, std::int16_t, 
 
 TEMPLATE_TEST_CASE("operator+=(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
 {
-    Rational<TestType> value(10, 3);
-    value += { 11, 7 };
-    CHECK(value == Rational<TestType>(103, 21));
+    CONSTEXPR_SECTION("")
+    {
+        Rational<TestType> value(10, 3);
+        value += { 11, 7 };
+        CONSTEXPR_REQUIRE(value == Rational<TestType>(103, 21));
+    };
 }
 
 TEMPLATE_TEST_CASE("operator-(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
@@ -71,9 +74,12 @@ TEMPLATE_TEST_CASE("operator-(const Rational&)", "", std::int8_t, std::int16_t, 
 
 TEMPLATE_TEST_CASE("operator-=(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
 {
-    Rational<TestType> value(10, 3);
-    value -= { 11, 7 };
-    CHECK(value == Rational<TestType>(37, 21));
+    CONSTEXPR_SECTION("")
+    {
+        Rational<TestType> value(10, 3);
+        value -= { 11, 7 };
+        CONSTEXPR_REQUIRE(value == Rational<TestType>(37, 21));
+    };
 }
 
 TEMPLATE_TEST_CASE("operator*(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
@@ -84,9 +90,12 @@ TEMPLATE_TEST_CASE("operator*(const Rational&)", "", std::int8_t, std::int16_t, 
 
 TEMPLATE_TEST_CASE("operator*=(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
 {
-    Rational<TestType> value(5, 3);
-    value *= { 11, 7 };
-    CHECK(value == Rational<TestType>(55, 21));
+    CONSTEXPR_SECTION("")
+    {
+        Rational<TestType> value(5, 3);
+        value *= { 11, 7 };
+        CONSTEXPR_REQUIRE(value == Rational<TestType>(55, 21));
+    };
 }
 
 TEMPLATE_TEST_CASE("operator/(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
@@ -97,9 +106,12 @@ TEMPLATE_TEST_CASE("operator/(const Rational&)", "", std::int8_t, std::int16_t, 
 
 TEMPLATE_TEST_CASE("operator/=(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
 {
-    Rational<TestType> value(5, 3);
-    value /= { 11, 7 };
-    CHECK(value == Rational<TestType>(35, 33));
+    CONSTEXPR_SECTION("")
+    {
+        Rational<TestType> value(5, 3);
+        value /= { 11, 7 };
+        CONSTEXPR_REQUIRE(value == Rational<TestType>(35, 33));
+    };
 }
 
 TEMPLATE_TEST_CASE("operator==(const Rational&)", "", std::int8_t, std::int16_t, std::int32_t, std::int64_t)
